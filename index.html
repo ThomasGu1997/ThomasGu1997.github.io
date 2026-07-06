@@ -109,11 +109,10 @@ section{padding:82px 0;position:relative}
 .card p b{color:var(--ink)}
 .chip{display:inline-block;font-size:.76rem;color:var(--a1);background:rgba(91,91,240,.08);border:1px solid rgba(91,91,240,.18);border-radius:100px;padding:4px 11px;margin:4px 6px 0 0;font-weight:600}
 .card .review-note{color:#c2410c;font-size:.82rem;font-style:italic;margin:-4px 0 12px}
-.card .fig{margin-top:16px;height:200px;border:1px solid var(--panel-brd);border-radius:12px;background:#fff;padding:10px;overflow:hidden}
-.card .fig a{display:block;height:100%;cursor:zoom-in}
-.card .fig img{display:block;width:100%;height:100%;object-fit:contain}
+.card .fig{margin-top:16px;border:1px solid var(--panel-brd);border-radius:12px;background:#fff;padding:10px;overflow:hidden}
+.card .fig a{display:block;cursor:zoom-in}
+.card .fig img{display:block;width:100%;height:auto}
 .card .fig.cover{padding:0}
-.card .fig.cover img{object-fit:cover}
 
 /* publications */
 .pub{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--panel-brd);transition:.25s}
@@ -165,6 +164,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;text-align:center;gap:38px}
+  .portrait img{width:min(250px,60vw)}
   .hero p.lead{margin-left:auto;margin-right:auto}
   .cta-row,.socials{justify-content:center}
   .portrait{order:-1}
@@ -231,12 +231,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
           <a href="#research" class="btn primary">Explore my research</a>
           <a href="#contact" class="btn ghost">Get in touch</a>
         </div>
-        <div class="socials">
-          <a href="mailto:gu1@mcmaster.ca" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
-          <a href="https://scholar.google.com/citations?user=7MYbphwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.3c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-3.3l-7 3.8-7-3.8z"/></svg></a>
-          <a href="https://www.linkedin.com/in/thomas-gu-046637229/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4z"/></svg></a>
-          <a href="https://github.com/ThomasGu1997" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.1 10.1 0 0022 12.3C22 6.6 17.5 2 12 2z"/></svg></a>
-        </div>
       </div>
       <div class="portrait reveal in">
         <span class="ring"></span>
@@ -288,7 +282,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
         <p>Constrained optimization for operational decision-making. My flagship Queue-Informed Signal Timing Optimization (QISTO) method reduced average delay by <b>72%</b> versus a throughput-optimal baseline while matching its throughput within <b>3.1%</b> — pruning <b>62%</b> of the candidate solution space along the way.</p>
         <p class="review-note">First-author manuscript under review · Transportation Research Part B: Methodological</p>
         <span class="chip">Constrained optimization</span><span class="chip">Search-space pruning</span><span class="chip">Metaheuristics</span>
-        <div class="fig"><a href="assets/research/qisto-corridor.png" target="_blank" rel="noopener" aria-label="View full-size corridor schematic"><img src="assets/research/qisto-corridor.png" alt="Corridor network schematic with intersection nodes and turn movements" width="787" height="1346" loading="lazy" /></a></div>
+        <div class="fig"><a href="assets/research/qisto-framework.png" target="_blank" rel="noopener" aria-label="View full-size QISTO framework figure"><img src="assets/research/qisto-framework.png" alt="The QISTO framework: queue-informed feasible-space reduction for corridor signal-timing optimization" width="1400" height="1513" loading="lazy" /></a></div>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
@@ -316,7 +310,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
       <p>Peer-reviewed journal articles in machine learning, optimization, and intelligent transportation systems.</p>
     </div>
     <div class="reveal">
-      <div class="pub"><div class="yr">2026</div><div class="body"><div class="ttl">Queue-Informed Signal Timing Optimization Under Congested Traffic</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue review">Under review · Transportation Research Part B: Methodological</span></div></div>
+      <div class="pub"><div class="yr">2026<span class="mo">Jul</span></div><div class="body"><div class="ttl">Queue-Informed Signal Timing Optimization Under Congested Traffic</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue review">Under review · Transportation Research Part B: Methodological</span></div></div>
       <div class="pub"><div class="yr">2025<span class="mo">May</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1177/03611981251332259" target="_blank" rel="noopener">Headway Anomaly Detection for Lane-Based Queuing Status Classification Using Detector Presence Data: A Comparative Study</a></div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Yang, H.</div><span class="venue">Transportation Research Record</span></div></div>
       <div class="pub"><div class="yr">2024<span class="mo">Nov</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1109/ACCESS.2024.3493753" target="_blank" rel="noopener">Cycle Maximum Queue Length Estimation: An Integrated Deep Learning and Adaptive Neuro-Fuzzy Inference System Framework</a></div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue">IEEE Access</span></div></div>
       <div class="pub"><div class="yr">2024<span class="mo">Feb</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1177/03611981231223287" target="_blank" rel="noopener">Medical Supplies Delivery Route Optimization under Public Health Emergencies Incorporating Metro-based Logistics System</a></div><div class="auth">Sun, K.; <b>Gu, Y.</b>; Ma, K.W.F.; Zheng, C.; Wu, F.</div><span class="venue">Transportation Research Record</span></div></div>
