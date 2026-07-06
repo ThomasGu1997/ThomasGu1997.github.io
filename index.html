@@ -12,8 +12,10 @@
 <meta property="og:url" content="https://thomasgu1997.github.io/" />
 <meta property="og:image" content="https://thomasgu1997.github.io/assets/profile.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta property="og:image:alt" content="Portrait of Yuhang (Thomas) Gu" />
 <meta name="theme-color" content="#f6f7fb" />
 <link rel="canonical" href="https://thomasgu1997.github.io/" />
+<link rel="preload" as="image" href="assets/profile.jpg" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235b5bf0'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial,sans-serif' font-size='32' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='central'%3EYG%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,11 +82,6 @@ header{position:relative;padding:150px 0 90px}
 .portrait{position:relative;justify-self:center}
 .portrait .ring{position:absolute;inset:-10px;border-radius:26px;background:var(--grad);opacity:.14;filter:blur(3px)}
 .portrait img{position:relative;width:min(340px,72vw);aspect-ratio:1/1.08;object-fit:cover;border-radius:22px;border:1px solid var(--panel-brd);box-shadow:var(--shadow-lg)}
-.badge-float{position:absolute;background:#fff;border:1px solid var(--panel-brd);border-radius:14px;padding:11px 15px;box-shadow:var(--shadow-lg)}
-.badge-float .n{font-family:'Sora';font-weight:800;font-size:1.15rem;line-height:1;color:var(--a1)}
-.badge-float .l{font-size:.7rem;color:var(--muted);letter-spacing:.03em}
-.bf1{top:16px;left:-30px}
-.bf2{bottom:22px;right:-26px}
 
 /* sections */
 section{padding:82px 0;position:relative}
@@ -111,13 +108,22 @@ section{padding:82px 0;position:relative}
 .card p{color:var(--body);margin:0 0 14px;font-size:.96rem}
 .card p b{color:var(--ink)}
 .chip{display:inline-block;font-size:.76rem;color:var(--a1);background:rgba(91,91,240,.08);border:1px solid rgba(91,91,240,.18);border-radius:100px;padding:4px 11px;margin:4px 6px 0 0;font-weight:600}
+.card .review-note{color:#c2410c;font-size:.82rem;font-style:italic;margin:-4px 0 12px}
+.card .fig{margin-top:16px;height:200px;border:1px solid var(--panel-brd);border-radius:12px;background:#fff;padding:10px;overflow:hidden}
+.card .fig a{display:block;height:100%;cursor:zoom-in}
+.card .fig img{display:block;width:100%;height:100%;object-fit:contain}
+.card .fig.cover{padding:0}
+.card .fig.cover img{object-fit:cover}
 
 /* publications */
 .pub{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--panel-brd);transition:.25s}
 .pub:hover{padding-left:8px}
 .pub .yr{font-family:'Sora';font-weight:700;color:var(--a1);min-width:54px;font-size:1.05rem}
+.pub .yr .mo{display:block;font-size:.68rem;color:var(--faint);font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-top:2px}
 .pub .body{flex:1}
 .pub .ttl{font-weight:600;color:var(--ink);margin-bottom:4px;font-size:1.02rem;line-height:1.35}
+.pub .ttl a{transition:.2s}
+.pub .ttl a:hover{color:var(--a1)}
 .pub .auth{color:var(--muted);font-size:.9rem}
 .pub .auth b{color:var(--ink)}
 .pub .venue{display:inline-block;margin-top:7px;font-size:.8rem;color:var(--faint);font-style:italic}
@@ -144,7 +150,8 @@ section{padding:82px 0;position:relative}
 .contact-card{background:linear-gradient(160deg,#fff,#eef1fb);border:1px solid var(--panel-brd);border-radius:26px;padding:52px 40px;text-align:center;box-shadow:var(--shadow-lg)}
 .contact-card h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 12px}
 .contact-card p{color:var(--muted);max-width:44ch;margin:0 auto 28px}
-.mail{font-family:'Sora';font-weight:700;font-size:clamp(1.1rem,3vw,1.55rem)}
+.skip-link{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ink);padding:10px 16px;border-radius:0 0 10px 0;z-index:100;font-weight:600}
+.skip-link:focus{left:0}
 
 footer{padding:38px 0 60px;border-top:1px solid var(--panel-brd);color:var(--faint);font-size:.88rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
@@ -157,7 +164,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1!important;transform:none!important}}
 
 @media(max-width:860px){
-  .badge-float{display:none}
   .hero{grid-template-columns:1fr;text-align:center;gap:38px}
   .hero p.lead{margin-left:auto;margin-right:auto}
   .cta-row,.socials{justify-content:center}
@@ -171,8 +177,31 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 }
 </style>
 <script>document.documentElement.className='js'</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yuhang Gu",
+  "alternateName": "Thomas Gu",
+  "url": "https://thomasgu1997.github.io/",
+  "image": "https://thomasgu1997.github.io/assets/profile.jpg",
+  "jobTitle": "Ph.D. Candidate, Civil Engineering",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "McMaster University" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Hohai University" },
+    { "@type": "CollegeOrUniversity", "name": "Guilin University of Electronic Technology" }
+  ],
+  "knowsAbout": ["Machine learning", "Optimization", "Traffic simulation", "Intelligent transportation systems", "Data science"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=7MYbphwAAAAJ",
+    "https://www.linkedin.com/in/thomas-gu-046637229/",
+    "https://github.com/ThomasGu1997"
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#about">Skip to content</a>
 
 <nav id="nav">
   <div class="wrap">
@@ -194,7 +223,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
   <div class="wrap">
     <div class="hero">
       <div class="reveal in">
-        <span class="eyebrow"><span class="pulse"></span> McMaster University · Toronto, Canada</span>
+        <span class="eyebrow"><span class="pulse"></span> McMaster University · Hamilton, Canada</span>
         <h1>Yuhang <span style="color:var(--muted);font-weight:600">(Thomas)</span> Gu</h1>
         <div class="role"><b>Ph.D. Candidate</b> — Machine Learning, Optimization &amp; Data Science for Intelligent Transportation Systems</div>
         <p class="lead">I build and rigorously validate predictive models and optimization algorithms that turn complex, real-world data into decisions.</p>
@@ -203,7 +232,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
           <a href="#contact" class="btn ghost">Get in touch</a>
         </div>
         <div class="socials">
-          <a href="mailto:gu1@mcmaster.ca" aria-label="Email" title="gu1@mcmaster.ca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <a href="mailto:gu1@mcmaster.ca" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
           <a href="https://scholar.google.com/citations?user=7MYbphwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.3c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-3.3l-7 3.8-7-3.8z"/></svg></a>
           <a href="https://www.linkedin.com/in/thomas-gu-046637229/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4z"/></svg></a>
           <a href="https://github.com/ThomasGu1997" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.1 10.1 0 0022 12.3C22 6.6 17.5 2 12 2z"/></svg></a>
@@ -211,7 +240,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
       </div>
       <div class="portrait reveal in">
         <span class="ring"></span>
-        <img src="assets/profile.jpg" alt="Yuhang (Thomas) Gu" />
+        <img src="assets/profile.jpg" alt="Portrait of Yuhang (Thomas) Gu" width="900" height="897" fetchpriority="high" />
       </div>
     </div>
   </div>
@@ -224,7 +253,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
         <div class="sec-tag">About</div>
         <div class="sec-head" style="margin-bottom:18px"><h2>Turning messy data into <span class="grad-text">defensible decisions.</span></h2></div>
         <p style="color:var(--body)">I'm an engineering Ph.D. researcher at <b style="color:var(--ink)">McMaster University</b>, working at the intersection of machine learning, optimization, and simulation for intelligent transportation systems. My research develops predictive models and optimization algorithms, then validates them the way a scientist should — benchmarking against strong baselines, cross-validating, and confirming results hold up before they're trusted.</p>
-        <p style="color:var(--body)">I'm the author of <b style="color:var(--ink)">several peer-reviewed publications</b> and a peer reviewer for journals including <i>Transportation Research Part A</i>, <i>Transportmetrica A</i>, and <i>IEEE Access</i>. I expect to complete my Ph.D. in 2026.</p>
+        <p style="color:var(--body)">I'm the author of <b style="color:var(--ink)">peer-reviewed journal publications</b> and a peer reviewer for journals including <i>Transportation Research Part A</i>, <i>Transportmetrica A</i>, and <i>IEEE Access</i>. I expect to complete my Ph.D. in 2026.</p>
       </div>
       <div class="reveal">
         <div class="metrics" style="grid-template-columns:1fr 1fr">
@@ -251,18 +280,29 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
         <h3>Machine Learning &amp; Predictive Modeling</h3>
         <p>Building and benchmarking models on large, real-world data. A deep-learning + neuro-fuzzy (ANFIS) framework in <b>TensorFlow/Keras</b> estimated queue lengths to <b>1.65–9.25% MAPE</b>; a random forest reached 0.83 accuracy / 0.825 AUC as the best of four benchmarked algorithms.</p>
         <span class="chip">Deep learning</span><span class="chip">Classification</span><span class="chip">ANFIS</span>
+        <div class="fig"><a href="assets/research/queue-estimation.png" target="_blank" rel="noopener" aria-label="View full-size framework figure"><img src="assets/research/queue-estimation.png" alt="Framework of the integrated deep-learning and ANFIS cycle queue-length estimation method" width="1224" height="1400" loading="lazy" /></a></div>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
+        <h3>Optimization &amp; Operations Research</h3>
+        <p>Constrained optimization for operational decision-making. My flagship Queue-Informed Signal Timing Optimization (QISTO) method reduced average delay by <b>72%</b> versus a throughput-optimal baseline while matching its throughput within <b>3.1%</b> — pruning <b>62%</b> of the candidate solution space along the way.</p>
+        <p class="review-note">First-author manuscript under review · Transportation Research Part B: Methodological</p>
+        <span class="chip">Constrained optimization</span><span class="chip">Search-space pruning</span><span class="chip">Metaheuristics</span>
+        <div class="fig"><a href="assets/research/qisto-corridor.png" target="_blank" rel="noopener" aria-label="View full-size corridor schematic"><img src="assets/research/qisto-corridor.png" alt="Corridor network schematic with intersection nodes and turn movements" width="787" height="1346" loading="lazy" /></a></div>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
         <h3>Anomaly Detection &amp; Screening</h3>
         <p>Detecting rare, irregular patterns in noisy operational data — headway anomaly detection for lane-based queuing-status classification, published in <i>Transportation Research Record</i> (2025). The same discipline transfers directly to fraud- and risk-screening problems.</p>
         <span class="chip">Anomaly detection</span><span class="chip">Statistical validation</span>
+        <div class="fig"><a href="assets/research/anomaly-detection.png" target="_blank" rel="noopener" aria-label="View full-size scenario figure"><img src="assets/research/anomaly-detection.png" alt="Queuing and free-flow vehicles passing a stopline detector, with headway and rearway illustrated" width="1400" height="555" loading="lazy" /></a></div>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
         <h3>Simulation &amp; Quantitative Analysis</h3>
         <p>Microscopic traffic simulation (<b>SUMO, VISSIM</b>) calibrated to field data, end-to-end analysis pipelines automated in Python, and rigorous validation — k-fold cross-validation, hypothesis testing, and head-to-head benchmarking to keep results reproducible.</p>
         <span class="chip">SUMO · VISSIM</span><span class="chip">Python pipelines</span><span class="chip">k-fold CV</span>
+        <div class="fig cover"><a href="assets/research/simulation.jpg" target="_blank" rel="noopener" aria-label="View full-size simulation screenshot"><img src="assets/research/simulation.jpg" alt="SUMO microscopic simulation of the signalized study intersection with four-phase signal timing" width="1400" height="1152" loading="lazy" /></a></div>
       </div>
     </div>
   </div>
@@ -277,12 +317,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
     </div>
     <div class="reveal">
       <div class="pub"><div class="yr">2026</div><div class="body"><div class="ttl">Queue-Informed Signal Timing Optimization Under Congested Traffic</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue review">Under review · Transportation Research Part B: Methodological</span></div></div>
-      <div class="pub"><div class="yr">2025</div><div class="body"><div class="ttl">Headway Anomaly Detection for Lane-Based Queuing Status Classification Using Detector Presence Data: A Comparative Study</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Yang, H.</div><span class="venue">Transportation Research Record</span></div></div>
-      <div class="pub"><div class="yr">2024</div><div class="body"><div class="ttl">Cycle Maximum Queue Length Estimation: An Integrated Deep Learning and Adaptive Neuro-Fuzzy Inference System Framework</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue">IEEE Access</span></div></div>
-      <div class="pub"><div class="yr">2024</div><div class="body"><div class="ttl">Medical Supplies Delivery Route Optimization under Public Health Emergencies Incorporating Metro-based Logistics System</div><div class="auth">Sun, K.; <b>Gu, Y.</b>; Ma, K.W.F.; Zheng, C.; Wu, F.</div><span class="venue">Transportation Research Record</span></div></div>
-      <div class="pub"><div class="yr">2022</div><div class="body"><div class="ttl">Multimodal Transport Path Selection of Cold-Chain Logistics Based on Improved Particle Swarm Optimization</div><div class="auth">Zheng, C.; Sun, K.; <b>Gu, Y.</b>; Shen, J.; Du, M.</div><span class="venue">Journal of Advanced Transportation</span></div></div>
-      <div class="pub"><div class="yr">2021</div><div class="body"><div class="ttl">Comprehensive Evaluation of Urban Integrated Transportation Network with Multivariate Statistical Analysis</div><div class="auth">Zheng, C.; <b>Gu, Y.</b>; Shen, J.; Du, M.; Ma, G.; Sun, K.</div><span class="venue">IEEE Access</span></div></div>
-      <div class="pub"><div class="yr">2021</div><div class="body"><div class="ttl">Urban Logistics Delivery Route Planning Based on a Single Metro Line</div><div class="auth">Zheng, C.; <b>Gu, Y.</b>; Shen, J.; Du, M.</div><span class="venue">IEEE Access</span></div></div>
+      <div class="pub"><div class="yr">2025<span class="mo">May</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1177/03611981251332259" target="_blank" rel="noopener">Headway Anomaly Detection for Lane-Based Queuing Status Classification Using Detector Presence Data: A Comparative Study</a></div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Yang, H.</div><span class="venue">Transportation Research Record</span></div></div>
+      <div class="pub"><div class="yr">2024<span class="mo">Nov</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1109/ACCESS.2024.3493753" target="_blank" rel="noopener">Cycle Maximum Queue Length Estimation: An Integrated Deep Learning and Adaptive Neuro-Fuzzy Inference System Framework</a></div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue">IEEE Access</span></div></div>
+      <div class="pub"><div class="yr">2024<span class="mo">Feb</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1177/03611981231223287" target="_blank" rel="noopener">Medical Supplies Delivery Route Optimization under Public Health Emergencies Incorporating Metro-based Logistics System</a></div><div class="auth">Sun, K.; <b>Gu, Y.</b>; Ma, K.W.F.; Zheng, C.; Wu, F.</div><span class="venue">Transportation Research Record</span></div></div>
+      <div class="pub"><div class="yr">2022<span class="mo">May</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1155/2022/5458760" target="_blank" rel="noopener">Multimodal Transport Path Selection of Cold-Chain Logistics Based on Improved Particle Swarm Optimization</a></div><div class="auth">Zheng, C.; Sun, K.; <b>Gu, Y.</b>; Shen, J.; Du, M.</div><span class="venue">Journal of Advanced Transportation</span></div></div>
+      <div class="pub"><div class="yr">2021<span class="mo">Dec</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1109/ACCESS.2021.3132169" target="_blank" rel="noopener">Comprehensive Evaluation of Urban Integrated Transportation Network with Multivariate Statistical Analysis</a></div><div class="auth">Zheng, C.; <b>Gu, Y.</b>; Shen, J.; Du, M.; Ma, G.; Sun, K.</div><span class="venue">IEEE Access</span></div></div>
+      <div class="pub"><div class="yr">2021<span class="mo">Mar</span></div><div class="body"><div class="ttl"><a href="https://doi.org/10.1109/ACCESS.2021.3069415" target="_blank" rel="noopener">Urban Logistics Delivery Route Planning Based on a Single Metro Line</a></div><div class="auth">Zheng, C.; <b>Gu, Y.</b>; Shen, J.; Du, M.</div><span class="venue">IEEE Access</span></div></div>
     </div>
     <div style="text-align:center;margin-top:30px" class="reveal">
       <a href="https://scholar.google.com/citations?user=7MYbphwAAAAJ&hl=en" target="_blank" rel="noopener" class="btn ghost">See all on Google Scholar →</a>
@@ -314,7 +354,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
     <div class="tl">
       <div class="tl-item reveal"><div class="when">2022 — 2026 (expected)</div><h4>Ph.D. Candidate, Civil Engineering</h4><div class="where">McMaster University · Hamilton, Canada</div><div class="meta">Machine-learning / optimization focus · Coursework GPA 4.0 / 4.0</div></div>
       <div class="tl-item reveal"><div class="when">2019 — 2022</div><h4>M.Phil., Transportation Planning &amp; Management</h4><div class="where">Hohai University · Nanjing, China</div><div class="meta">GPA 89.7 / 100 · Class rank 1 / 15</div></div>
-      <div class="tl-item reveal"><div class="when">2015 — 2019</div><h4>B.Eng., Traffic Engineering</h4><div class="where">Guilin University of Electronic Technology · Guilin, China</div><div class="meta">Class rank 2 / 79</div></div>
+      <div class="tl-item reveal"><div class="when">2015 — 2019</div><h4>B.Eng., Traffic Engineering</h4><div class="where">Guilin University of Electronic Technology · Guilin, China</div><div class="meta">GPA 85.8 / 100 · Class rank 2 / 79</div></div>
     </div>
   </div>
 </section>
@@ -325,8 +365,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
       <div class="sec-tag" style="justify-content:center">Contact</div>
       <h2>Let's connect</h2>
       <p>I'm always glad to discuss machine learning, optimization, and intelligent-transportation research — or an interesting problem worth solving. Feel free to reach out.</p>
-      <a href="mailto:gu1@mcmaster.ca" class="btn primary mail" style="margin:0 auto">gu1@mcmaster.ca</a>
       <div class="socials" style="justify-content:center;margin-top:26px">
+        <a href="mailto:gu1@mcmaster.ca" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
         <a href="https://www.linkedin.com/in/thomas-gu-046637229/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4z"/></svg></a>
         <a href="https://scholar.google.com/citations?user=7MYbphwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.3c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-3.3l-7 3.8-7-3.8z"/></svg></a>
         <a href="https://github.com/ThomasGu1997" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.1 10.1 0 0022 12.3C22 6.6 17.5 2 12 2z"/></svg></a>
