@@ -109,12 +109,8 @@ section{padding:82px 0;position:relative}
 .card p b{color:var(--ink)}
 .chip{display:inline-block;font-size:.76rem;color:var(--a1);background:rgba(91,91,240,.08);border:1px solid rgba(91,91,240,.18);border-radius:100px;padding:4px 11px;margin:4px 6px 0 0;font-weight:600}
 .card .review-note{color:#c2410c;font-size:.82rem;font-style:italic;margin:-4px 0 12px}
-.card .era{color:var(--faint);font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin:-6px 0 10px}
-.card.wide{grid-column:1/-1}
-.fig-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-.fig-row .fig{margin-top:0;height:200px}
-.fig-row .fig a{display:flex;align-items:center;justify-content:center;height:100%}
-.fig-row .fig img{width:auto;height:auto;max-width:100%;max-height:100%}
+.g3{grid-template-columns:repeat(3,1fr)}
+.grid-label{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--a1);font-weight:700;margin:38px 0 16px}
 .card .fig{margin-top:16px;border:1px solid var(--panel-brd);border-radius:12px;background:#fff;padding:10px;overflow:hidden}
 .card .fig a{display:block;cursor:zoom-in}
 .card .fig img{display:block;width:100%;height:auto}
@@ -143,7 +139,7 @@ section{padding:82px 0;position:relative}
 
 /* timeline */
 .tl{position:relative;padding-left:34px}
-.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--a1),var(--a2))}
+.tl::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--a1),var(--a2))}
 .tl-item{position:relative;padding:0 0 34px}
 .tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--a1);box-shadow:0 0 0 4px rgba(91,91,240,.10)}
 .tl-item .when{font-size:.82rem;color:var(--a1);font-weight:700;letter-spacing:.03em}
@@ -176,7 +172,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
   .portrait{order:-1}
   .metrics{grid-template-columns:repeat(2,1fr)}
   .g2,.skills{grid-template-columns:1fr}
-  .fig-row{grid-template-columns:1fr}
+  .g3{grid-template-columns:1fr}
   .nav-links{position:fixed;inset:70px 0 auto 0;flex-direction:column;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);padding:18px;gap:4px;border-bottom:1px solid var(--panel-brd);transform:translateY(-140%);transition:.4s;box-shadow:var(--shadow)}
   .nav-links.open{transform:none}
   .nav-links a{padding:14px}
@@ -305,17 +301,29 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
         <span class="chip">SUMO · VISSIM</span><span class="chip">Python pipelines</span><span class="chip">k-fold CV</span>
         <div class="fig cover"><a href="assets/research/simulation.jpg" target="_blank" rel="noopener" aria-label="View full-size simulation screenshot"><img src="assets/research/simulation.jpg" alt="SUMO microscopic simulation of the signalized study intersection with four-phase signal timing" width="1400" height="1152" loading="lazy" /></a></div>
       </div>
-      <div class="card reveal wide">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h8a4 4 0 000-8H8a4 4 0 010-8h8"/></svg></div>
-        <h3>Routing &amp; Network Optimization</h3>
-        <p class="era">Earlier work · M.Phil., Hohai University (2019–2022)</p>
-        <p>Metaheuristic vehicle routing (VRP/VRPTW; genetic algorithms, improved particle swarm optimization) for metro-integrated urban logistics — emergency medical-supplies delivery (<i>Transportation Research Record</i>, 2024) and single-metro-line delivery planning (<i>IEEE Access</i>, 2021) — plus multivariate statistical evaluation of urban transportation networks (<i>IEEE Access</i>, 2021).</p>
-        <span class="chip">VRP / VRPTW</span><span class="chip">Genetic algorithms</span><span class="chip">Particle swarm</span><span class="chip">Multivariate analysis</span>
-        <div class="fig-row">
-          <div class="fig"><a href="assets/research/master-logistics.png" target="_blank" rel="noopener" aria-label="View full-size metro-based logistics figure"><img src="assets/research/master-logistics.png" alt="Concept of metro-integrated medical-supplies delivery: truck short haul, underground metro long haul, and medical-van routing" width="1400" height="652" loading="lazy" /></a></div>
-          <div class="fig"><a href="assets/research/master-metroline.png" target="_blank" rel="noopener" aria-label="View full-size metro-line delivery figure"><img src="assets/research/master-metroline.png" alt="Urban logistics delivery process based on a single metro line: road short haul, metro long haul, and last-mile ground delivery" width="1400" height="908" loading="lazy" /></a></div>
-          <div class="fig"><a href="assets/research/master-evaluation.png" target="_blank" rel="noopener" aria-label="View full-size evaluation framework figure"><img src="assets/research/master-evaluation.png" alt="Framework of the comprehensive evaluation of urban integrated transportation networks with multivariate statistical analysis" width="1400" height="822" loading="lazy" /></a></div>
-        </div>
+    </div>
+    <div class="grid-label reveal">Earlier Work · M.Phil., Hohai University (2019–2022)</div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 16V6h13v10H1zM14 9h4l4 4v3h-3"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+        <h3>Emergency Medical Logistics</h3>
+        <p>Metro-integrated delivery of medical supplies under public-health emergencies — three-phase routing (truck short haul, metro long haul, medical-van delivery) optimized with metaheuristics (<i>Transportation Research Record</i>, 2024).</p>
+        <span class="chip">VRP / VRPTW</span><span class="chip">Metaheuristics</span>
+        <div class="fig"><a href="assets/research/master-logistics.png" target="_blank" rel="noopener" aria-label="View full-size metro-based logistics figure"><img src="assets/research/master-logistics.png" alt="Concept of metro-integrated medical-supplies delivery: truck short haul, underground metro long haul, and medical-van routing" width="1400" height="652" loading="lazy" /></a></div>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 11h14M9 19l-2 3M15 19l2 3M9 15h.01M15 15h.01"/></svg></div>
+        <h3>Metro-Based Urban Logistics</h3>
+        <p>Delivery route planning on a single passenger metro line — road short haul, metro long haul, and last-mile ground delivery — with routes optimized by metaheuristics (ACO, PSO) (<i>IEEE Access</i>, 2021).</p>
+        <span class="chip">Route planning</span><span class="chip">ACO · PSO</span>
+        <div class="fig"><a href="assets/research/master-metroline.png" target="_blank" rel="noopener" aria-label="View full-size metro-line delivery figure"><img src="assets/research/master-metroline.png" alt="Urban logistics delivery process based on a single metro line: road short haul, metro long haul, and last-mile ground delivery" width="1400" height="908" loading="lazy" /></a></div>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"/></svg></div>
+        <h3>Urban Network Evaluation</h3>
+        <p>Comprehensive evaluation of urban integrated transportation networks with multivariate statistical analysis — index screening, AHP + entropy weighting, and grey relational analysis (<i>IEEE Access</i>, 2021).</p>
+        <span class="chip">Multivariate analysis</span><span class="chip">AHP · entropy weighting</span>
+        <div class="fig"><a href="assets/research/master-evaluation.png" target="_blank" rel="noopener" aria-label="View full-size evaluation framework figure"><img src="assets/research/master-evaluation.png" alt="Framework of the comprehensive evaluation of urban integrated transportation networks with multivariate statistical analysis" width="1400" height="822" loading="lazy" /></a></div>
       </div>
     </div>
   </div>
