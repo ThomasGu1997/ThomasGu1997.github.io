@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yuhang (Thomas) Gu — Machine Learning · Optimization · Data Science</title>
+<meta name="description" content="Yuhang (Thomas) Gu — Ph.D. Candidate at McMaster University working on machine learning, optimization, and simulation for intelligent transportation systems. 6 peer-reviewed publications, 161 citations." />
+<meta name="author" content="Yuhang (Thomas) Gu" />
+<meta property="og:title" content="Yuhang (Thomas) Gu — ML · Optimization · Data Science" />
+<meta property="og:description" content="Ph.D. Candidate developing and validating predictive models and optimization algorithms. 6 publications · 161 citations · h-index 5." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://thomasgu1997.github.io/" />
+<meta property="og:image" content="https://thomasgu1997.github.io/assets/profile.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#070810" />
+<link rel="canonical" href="https://thomasgu1997.github.io/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c6cff'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial,sans-serif' font-size='32' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='central'%3EYG%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#070810; --bg2:#0b0d1a; --panel:rgba(255,255,255,.045); --panel-brd:rgba(255,255,255,.09);
+  --ink:#eef0f8; --body:#cfd4e8; --muted:#b3bad3; --faint:#828cac;
+  --a1:#7c6cff; --a2:#22d3ee; --a3:#f472b6;
+  --grad:linear-gradient(120deg,#7c6cff,#22d3ee);
+  --ring:0 0 0 1px rgba(255,255,255,.06);
+  --maxw:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3,.font-d{font-family:'Sora','Inter',sans-serif;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* animated background */
+.bg-mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(1200px 700px at 80% -10%,rgba(124,108,255,.20),transparent 60%),radial-gradient(1000px 700px at -10% 20%,rgba(34,211,238,.14),transparent 55%),var(--bg)}
+.blob{position:absolute;border-radius:50%;filter:blur(55px);opacity:.5;will-change:transform;animation:float 18s ease-in-out infinite}
+.blob.b1{width:520px;height:520px;background:#6d5efc;top:-120px;left:-80px}
+.blob.b2{width:460px;height:460px;background:#22d3ee;bottom:-140px;right:-60px;animation-delay:-6s}
+.blob.b3{width:380px;height:380px;background:#f472b6;top:40%;left:55%;opacity:.28;animation-delay:-11s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.06)}66%{transform:translate(-30px,25px) scale(.96)}}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.4s}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{font-family:'Sora';font-weight:800;font-size:1.05rem}
+.brand .dot{color:var(--a2)}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{padding:9px 14px;border-radius:10px;color:var(--muted);font-size:.92rem;font-weight:500;transition:.25s}
+.nav-links a:hover{color:var(--ink);background:var(--panel)}
+.nav-cta{background:var(--grad);color:#06121f !important;font-weight:600 !important}
+nav.scrolled{background:rgba(9,10,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--panel-brd)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* hero */
+header{position:relative;padding:150px 0 90px}
+.hero{display:grid;grid-template-columns:1.35fr .9fr;gap:50px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a2);font-weight:600;margin-bottom:20px;padding:7px 14px;border:1px solid var(--panel-brd);border-radius:100px;background:var(--panel)}
+.pulse{width:8px;height:8px;border-radius:50%;background:#5eead4;box-shadow:0 0 0 0 rgba(94,234,212,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,234,212,.5)}70%{box-shadow:0 0 0 12px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.3rem);line-height:1.03;font-weight:800;margin:0 0 18px}
+.hero .role{font-size:clamp(1.05rem,2vw,1.4rem);color:var(--muted);font-weight:500;margin-bottom:22px}
+.hero .role b{color:var(--ink);font-weight:600}
+.hero p.lead{color:var(--body);font-size:1.08rem;max-width:37ch;margin:0 0 30px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:.95rem;transition:.28s;border:1px solid transparent}
+.btn.primary{background:var(--grad);color:#06121f;box-shadow:0 10px 30px -10px rgba(109,94,252,.6)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(34,211,238,.55)}
+.btn.ghost{border-color:var(--panel-brd);color:var(--ink);background:var(--panel)}
+.btn.ghost:hover{border-color:var(--a2);color:var(--a2);transform:translateY(-3px)}
+.socials{display:flex;gap:14px}
+.socials a{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--panel-brd);border-radius:12px;color:var(--muted);background:var(--panel);transition:.28s}
+.socials a:hover{color:var(--ink);border-color:var(--a2);transform:translateY(-3px)}
+.socials svg{width:20px;height:20px}
+
+/* portrait */
+.portrait{position:relative;justify-self:center}
+.portrait .ring{position:absolute;inset:-14px;border-radius:28px;background:var(--grad);filter:blur(22px);opacity:.55;animation:float 10s ease-in-out infinite}
+.portrait img{position:relative;width:min(340px,72vw);aspect-ratio:1/1.08;object-fit:cover;border-radius:24px;border:1px solid var(--panel-brd);box-shadow:0 30px 70px -20px rgba(0,0,0,.7)}
+.badge-float{position:absolute;background:rgba(12,14,26,.82);backdrop-filter:blur(10px);border:1px solid var(--panel-brd);border-radius:14px;padding:11px 15px;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+.badge-float .n{font-family:'Sora';font-weight:800;font-size:1.15rem;line-height:1}
+.badge-float .l{font-size:.7rem;color:var(--muted);letter-spacing:.04em}
+.bf1{top:14px;left:-34px;animation:float 9s ease-in-out infinite}
+.bf2{bottom:22px;right:-30px;animation:float 11s ease-in-out infinite;animation-delay:-3s}
+
+/* sections */
+section{padding:84px 0;position:relative}
+.sec-head{margin-bottom:42px;max-width:640px}
+.sec-tag{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--a2);font-weight:700}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;margin:.35em 0 .2em}
+.sec-head p{color:var(--muted);margin:0}
+
+/* metrics */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.metric{background:var(--panel);border:1px solid var(--panel-brd);border-radius:18px;padding:26px 22px;text-align:center;position:relative;overflow:hidden;transition:.3s}
+.metric:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.35)}
+.metric .num{font-family:'Sora';font-weight:800;font-size:2.6rem;line-height:1;color:var(--a2)}
+.metric .lab{color:var(--muted);font-size:.86rem;margin-top:10px}
+
+/* cards */
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--panel);border:1px solid var(--panel-brd);border-radius:20px;padding:28px;transition:.3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-5px);border-color:rgba(124,108,255,.4);background:rgba(255,255,255,.06)}
+.card .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:rgba(124,108,255,.16);border:1px solid rgba(124,108,255,.30);margin-bottom:18px}
+.card .ico svg{width:26px;height:26px;color:var(--a1)}
+.card h3{font-size:1.22rem;font-weight:700;margin:0 0 10px}
+.card p{color:var(--muted);margin:0 0 14px;font-size:.96rem}
+.chip{display:inline-block;font-size:.76rem;color:var(--a2);background:rgba(34,211,238,.09);border:1px solid rgba(34,211,238,.22);border-radius:100px;padding:4px 11px;margin:4px 6px 0 0;font-weight:600}
+
+/* publications */
+.pub{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--panel-brd);transition:.3s}
+.pub:hover{padding-left:8px}
+.pub .yr{font-family:'Sora';font-weight:700;color:var(--a2);min-width:54px;font-size:1.05rem}
+.pub .body{flex:1}
+.pub .ttl{font-weight:600;color:var(--ink);margin-bottom:4px;font-size:1.02rem;line-height:1.35}
+.pub .auth{color:var(--muted);font-size:.9rem}
+.pub .auth b{color:var(--muted)}
+.pub .venue{display:inline-block;margin-top:7px;font-size:.8rem;color:var(--muted);font-style:italic}
+.pub .venue.review{color:var(--a3)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skillcat{background:var(--panel);border:1px solid var(--panel-brd);border-radius:18px;padding:24px}
+.skillcat h4{margin:0 0 14px;font-family:'Sora';font-size:1rem;color:var(--ink)}
+.pill{display:inline-block;font-size:.85rem;padding:7px 13px;margin:0 7px 9px 0;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--panel-brd);color:var(--muted);transition:.22s}
+.pill:hover{color:var(--ink);border-color:var(--a2)}
+
+/* timeline */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--a1),var(--a2))}
+.tl-item{position:relative;padding:0 0 34px}
+.tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--a2);box-shadow:0 0 0 4px rgba(34,211,238,.14)}
+.tl-item .when{font-size:.82rem;color:var(--a2);font-weight:600;letter-spacing:.04em}
+.tl-item h4{margin:5px 0 3px;font-size:1.15rem;font-family:'Sora'}
+.tl-item .where{color:var(--muted);font-size:.95rem}
+.tl-item .meta{color:var(--faint);font-size:.86rem;margin-top:4px}
+
+/* contact */
+.contact-card{background:linear-gradient(160deg,rgba(124,108,255,.14),rgba(34,211,238,.06));border:1px solid var(--panel-brd);border-radius:26px;padding:52px 40px;text-align:center}
+.contact-card h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 12px}
+.contact-card p{color:var(--muted);max-width:44ch;margin:0 auto 28px}
+.mail{font-family:'Sora';font-weight:700;font-size:clamp(1.1rem,3vw,1.6rem)}
+
+footer{padding:40px 0 60px;border-top:1px solid var(--panel-brd);color:var(--faint);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+
+/* reveal */
+.reveal{transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.js .reveal{opacity:0;transform:translateY(28px)}
+.reveal.in{opacity:1;transform:none}
+:where(a,button,.btn,.socials a,.nav-links a):focus-visible{outline:2px solid var(--a2);outline-offset:3px;border-radius:10px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1!important;transform:none!important}}
+
+@media(max-width:860px){
+  .blob.b3{display:none}
+  .badge-float{display:none}
+  .hero{grid-template-columns:1fr;text-align:center;gap:38px}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .cta-row,.socials{justify-content:center}
+  .portrait{order:-1}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .g2,.skills{grid-template-columns:1fr}
+  .nav-links{position:fixed;inset:70px 0 auto 0;flex-direction:column;background:rgba(9,10,20,.96);backdrop-filter:blur(14px);padding:18px;gap:4px;border-bottom:1px solid var(--panel-brd);transform:translateY(-140%);transition:.4s}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:14px}
+  .burger{display:flex}
+}
+</style>
+<script>document.documentElement.className='js'</script>
+</head>
+<body>
+<div class="bg-mesh"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<div class="grain"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">Yuhang Gu<span class="dot">.</span></a>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+<header id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div class="reveal in">
+        <span class="eyebrow"><span class="pulse"></span> Available September 2026 · Toronto / GTA</span>
+        <h1>Yuhang <span style="color:var(--muted);font-weight:600">(Thomas)</span> Gu</h1>
+        <div class="role"><b>Ph.D. Candidate</b> — Machine Learning, Optimization &amp; Data Science for Intelligent Transportation Systems</div>
+        <p class="lead">I build and rigorously validate predictive models and optimization algorithms that turn complex, real-world data into decisions.</p>
+        <div class="cta-row">
+          <a href="assets/Yuhang_Gu_CV.pdf" class="btn primary" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg> Download CV
+          </a>
+          <a href="#publications" class="btn ghost">View publications</a>
+        </div>
+        <div class="socials">
+          <a href="mailto:gu1@mcmaster.ca" aria-label="Email" title="gu1@mcmaster.ca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <a href="https://scholar.google.com/citations?user=7MYbphwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.3c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-3.3l-7 3.8-7-3.8z"/></svg></a>
+          <a href="https://www.linkedin.com/in/thomas-gu-046637229/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4z"/></svg></a>
+          <a href="https://github.com/ThomasGu1997" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.1 10.1 0 0022 12.3C22 6.6 17.5 2 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="portrait reveal in">
+        <span class="ring"></span>
+        <img src="assets/profile.jpg" alt="Yuhang (Thomas) Gu" />
+        <div class="badge-float bf1"><div class="n grad-text">161</div><div class="l">Citations</div></div>
+        <div class="badge-float bf2"><div class="n grad-text">6</div><div class="l">Publications</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="grid g2" style="align-items:center;gap:44px">
+      <div class="reveal">
+        <div class="sec-tag">About</div>
+        <div class="sec-head" style="margin-bottom:18px"><h2>Turning messy data into <span class="grad-text">defensible decisions.</span></h2></div>
+        <p style="color:var(--body)">I'm an engineering Ph.D. researcher at <b style="color:var(--ink)">McMaster University</b>, working at the intersection of machine learning, optimization, and simulation for intelligent transportation systems. My research develops predictive models and optimization algorithms, then validates them the way a scientist should — benchmarking against strong baselines, cross-validating, and confirming results hold up before they're trusted.</p>
+        <p style="color:var(--body)">I'm the author of <b style="color:var(--ink)">six peer-reviewed publications</b> and a peer reviewer for journals including <i>Transportation Research Part A</i>, <i>Transportmetrica A</i>, and <i>IEEE Access</i>. I complete my Ph.D. in 2026 and am available to start in September 2026.</p>
+      </div>
+      <div class="reveal">
+        <div class="metrics" style="grid-template-columns:1fr 1fr">
+          <div class="metric"><div class="num" data-count="161">0</div><div class="lab">Citations (Google Scholar)</div></div>
+          <div class="metric"><div class="num" data-count="5">0</div><div class="lab">h-index</div></div>
+          <div class="metric"><div class="num" data-count="72" data-suffix="%">0</div><div class="lab">Delay reduction (QISTO)</div></div>
+          <div class="metric"><div class="num" data-count="4.0" data-dec="1">0</div><div class="lab">Ph.D. coursework GPA</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Research</div>
+      <h2>What I work on</h2>
+      <p>Machine learning and operations research applied to real, noisy, high-stakes systems — with the flagship results below.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5m0 14h16M8 15l3-4 3 3 4-6"/></svg></div>
+        <h3>Optimization &amp; Operations Research</h3>
+        <p>Exact and metaheuristic optimization for decision-making under constraints. My flagship method, <b style="color:var(--ink)">QISTO</b> (Queue-Informed Signal Timing Optimization), cut average delay by <b style="color:var(--ink)">72%</b> versus a throughput-optimal baseline at under 3.1% throughput cost, while pruning 62% of the search space — first-author, under review at <i>Transportation Research Part B</i>.</p>
+        <span class="chip">Combinatorial optimization</span><span class="chip">GA · PSO · Tabu</span><span class="chip">VRP / VRPTW</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10l2 2M5 19l2-2m10-10l2-2"/></svg></div>
+        <h3>Machine Learning &amp; Predictive Modeling</h3>
+        <p>Building and benchmarking models on large, real-world data. A deep-learning + neuro-fuzzy (ANFIS) framework in <b style="color:var(--ink)">TensorFlow/Keras</b> estimated queue lengths to <b style="color:var(--ink)">1.65–9.25% MAPE</b>; a random forest reached 0.83 accuracy / 0.825 AUC as the best of four benchmarked algorithms.</p>
+        <span class="chip">Deep learning</span><span class="chip">Classification</span><span class="chip">ANFIS</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
+        <h3>Anomaly Detection &amp; Screening</h3>
+        <p>Detecting rare, irregular patterns in noisy operational data — headway anomaly detection for lane-based queuing-status classification, published in <i>Transportation Research Record</i> (2025). The same discipline transfers directly to fraud- and risk-screening problems.</p>
+        <span class="chip">Anomaly detection</span><span class="chip">Statistical validation</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Simulation &amp; Quantitative Analysis</h3>
+        <p>Microscopic traffic simulation (<b style="color:var(--ink)">SUMO, VISSIM</b>) calibrated to field data, end-to-end analysis pipelines automated in Python, and rigorous validation — k-fold cross-validation, hypothesis testing, and head-to-head benchmarking to keep results reproducible.</p>
+        <span class="chip">SUMO · VISSIM</span><span class="chip">Python pipelines</span><span class="chip">k-fold CV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Publications</div>
+      <h2>Selected work</h2>
+      <p>Six peer-reviewed articles + one under review · 161 citations · h-index 5 · i10-index 3 <span style="color:var(--faint)">(Google Scholar)</span></p>
+    </div>
+    <div class="reveal">
+      <div class="pub"><div class="yr">2026</div><div class="body"><div class="ttl">Queue-Informed Signal Timing Optimization Under Congested Traffic</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue review">Under review · Transportation Research Part B: Methodological</span></div></div>
+      <div class="pub"><div class="yr">2025</div><div class="body"><div class="ttl">Headway Anomaly Detection for Lane-Based Queuing Status Classification Using Detector Presence Data: A Comparative Study</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Yang, H.</div><span class="venue">Transportation Research Record</span></div></div>
+      <div class="pub"><div class="yr">2024</div><div class="body"><div class="ttl">Cycle Maximum Queue Length Estimation: An Integrated Deep Learning and Adaptive Neuro-Fuzzy Inference System Framework</div><div class="auth"><b>Gu, Y.</b>; Razavi, S.; Habibi, S.</div><span class="venue">IEEE Access</span></div></div>
+      <div class="pub"><div class="yr">2024</div><div class="body"><div class="ttl">Medical Supplies Delivery Route Optimization under Public Health Emergencies Incorporating Metro-based Logistics System</div><div class="auth">Sun, K.; <b>Gu, Y.</b>; Ma, K.W.F.; Zheng, C.; Wu, F.</div><span class="venue">Transportation Research Record</span></div></div>
+      <div class="pub"><div class="yr">2022</div><div class="body"><div class="ttl">Multimodal Transport Path Selection of Cold-Chain Logistics Based on Improved Particle Swarm Optimization</div><div class="auth">Zheng, C.; Sun, K.; <b>Gu, Y.</b>; Shen, J.; Du, M.</div><span class="venue">Journal of Advanced Transportation</span></div></div>
+      <div class="pub"><div class="yr">2021</div><div class="body"><div class="ttl">Comprehensive Evaluation of Urban Integrated Transportation Network with Multivariate Statistical Analysis</div><div class="auth">Zheng, C.; <b>Gu, Y.</b>; Shen, J.; Du, M.; Ma, G.; Sun, K.</div><span class="venue">IEEE Access</span></div></div>
+      <div class="pub"><div class="yr">2021</div><div class="body"><div class="ttl">Urban Logistics Delivery Route Planning Based on a Single Metro Line</div><div class="auth">Zheng, C.; <b>Gu, Y.</b>; Shen, J.; Du, M.</div><span class="venue">IEEE Access</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:30px" class="reveal">
+      <a href="https://scholar.google.com/citations?user=7MYbphwAAAAJ&hl=en" target="_blank" rel="noopener" class="btn ghost">See all on Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Toolkit</div>
+      <h2>Skills &amp; tools</h2>
+    </div>
+    <div class="skills">
+      <div class="skillcat reveal"><h4>Languages &amp; Data</h4><span class="pill">Python</span><span class="pill">pandas</span><span class="pill">NumPy</span><span class="pill">scikit-learn</span><span class="pill">Matplotlib / Seaborn</span><span class="pill">MATLAB</span><span class="pill">SQL</span><span class="pill">Git</span></div>
+      <div class="skillcat reveal"><h4>Machine Learning</h4><span class="pill">TensorFlow / Keras</span><span class="pill">Deep learning (MLP)</span><span class="pill">Classification</span><span class="pill">Anomaly detection</span><span class="pill">Clustering (GMM)</span><span class="pill">ANFIS</span></div>
+      <div class="skillcat reveal"><h4>Optimization &amp; OR</h4><span class="pill">Combinatorial optimization</span><span class="pill">Search-space pruning</span><span class="pill">Genetic algorithms</span><span class="pill">Particle swarm</span><span class="pill">Tabu search</span><span class="pill">VRP / VRPTW</span></div>
+      <div class="skillcat reveal"><h4>Simulation, Stats &amp; Geospatial</h4><span class="pill">SUMO</span><span class="pill">VISSIM</span><span class="pill">k-fold cross-validation</span><span class="pill">Hypothesis testing</span><span class="pill">Multivariate analysis</span><span class="pill">TransCAD</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Journey</div>
+      <h2>Education</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="when">2022 — 2026 (expected)</div><h4>Ph.D. Candidate, Civil Engineering</h4><div class="where">McMaster University · Hamilton, Canada</div><div class="meta">Machine-learning / optimization focus · Coursework GPA 4.0 / 4.0</div></div>
+      <div class="tl-item reveal"><div class="when">2019 — 2022</div><h4>M.Phil., Transportation Planning &amp; Management</h4><div class="where">Hohai University · Nanjing, China</div><div class="meta">GPA 89.7 / 100 · Class rank 1 / 15</div></div>
+      <div class="tl-item reveal"><div class="when">2015 — 2019</div><h4>B.Eng., Traffic Engineering</h4><div class="where">Guilin University of Electronic Technology · Guilin, China</div><div class="meta">Class rank 2 / 79</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="sec-tag" style="justify-content:center">Contact</div>
+      <h2>Let's connect</h2>
+      <p>I'm seeking data-scientist, applied-scientist, and operations-research roles starting September 2026. I'd love to hear from you.</p>
+      <a href="mailto:gu1@mcmaster.ca" class="btn primary mail" style="margin:0 auto">gu1@mcmaster.ca</a>
+      <div class="socials" style="justify-content:center;margin-top:26px">
+        <a href="https://www.linkedin.com/in/thomas-gu-046637229/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4z"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=7MYbphwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.3c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-3.3l-7 3.8-7-3.8z"/></svg></a>
+        <a href="https://github.com/ThomasGu1997" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.1 10.1 0 0022 12.3C22 6.6 17.5 2 12 2z"/></svg></a>
+        <a href="assets/Yuhang_Gu_CV.pdf" target="_blank" rel="noopener" aria-label="CV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15h6M9 11h2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr"></span> Yuhang (Thomas) Gu · Markham, ON, Canada</div>
+    <div><a href="https://github.com/ThomasGu1997" target="_blank" rel="noopener" style="color:var(--muted)">github.com/ThomasGu1997</a></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+// nav scroll state
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// mobile menu
+const burger=document.getElementById('burger'),links=document.getElementById('navlinks');
+const setMenu=(o)=>{links.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)};
+burger.addEventListener('click',(e)=>{e.stopPropagation();setMenu(!links.classList.contains('open'))});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('click',(e)=>{if(!links.contains(e.target)&&!burger.contains(e.target))setMenu(false)});
+// reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// animated counters
+const fmt=(v,dec)=>dec?v.toFixed(dec):Math.round(v).toLocaleString();
+const cio=new IntersectionObserver((es)=>es.forEach(e=>{
+  if(!e.isIntersecting)return; cio.unobserve(e.target);
+  const el=e.target,target=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0),suf=el.dataset.suffix||'';
+  if(reduce){el.textContent=fmt(target,dec)+suf;return;}
+  let t0=null;const dur=1500;
+  const step=(t)=>{if(!t0)t0=t;const p=Math.min((t-t0)/dur,1),eased=1-Math.pow(1-p,3);
+    el.textContent=fmt(target*eased,dec)+suf; if(p<1)requestAnimationFrame(step);};
+  requestAnimationFrame(step);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
