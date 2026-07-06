@@ -92,12 +92,13 @@ section{padding:82px 0;position:relative}
 
 /* pipeline */
 .pipeline{background:var(--panel);border:1px solid var(--panel-brd);border-radius:20px;padding:26px 28px;box-shadow:var(--shadow)}
-.step{display:flex;gap:16px;align-items:flex-start}
+.step{display:flex;gap:16px;align-items:stretch}
+.step .icol{width:42px;flex:none;display:flex;flex-direction:column;align-items:center}
 .step .s-ico{width:42px;height:42px;border-radius:12px;background:rgba(91,91,240,.10);border:1px solid rgba(91,91,240,.20);display:grid;place-items:center;color:var(--a1);flex:none}
 .step .s-ico svg{width:21px;height:21px}
 .step b{display:block;font-family:'Sora';font-size:.98rem;color:var(--ink)}
 .step span{color:var(--muted);font-size:.88rem;line-height:1.5}
-.pipe-arrow{height:26px;width:42px;display:flex;align-items:center;justify-content:center;color:#c3c8dc}
+.pipe-arrow{flex:1;min-height:30px;display:flex;align-items:center;justify-content:center;color:#c3c8dc}
 .pipe-arrow svg{width:14px;height:14px}
 
 /* cards */
@@ -256,13 +257,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
       </div>
       <div class="reveal">
         <div class="pipeline">
-          <div class="step"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 010 8.4M7.8 16.2a6 6 0 010-8.4M19 5a10 10 0 010 14M5 19A10 10 0 015 5"/></svg></div><div><b>Sense</b><span>Noisy, real-world sensor and detector data</span></div></div>
-          <div class="pipe-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v14M6 13l6 6 6-6"/></svg></div>
-          <div class="step"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div><div><b>Estimate</b><span>Deep-learning + neuro-fuzzy models turn signals into reliable estimates</span></div></div>
-          <div class="pipe-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v14M6 13l6 6 6-6"/></svg></div>
-          <div class="step"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div><div><b>Decide</b><span>Constrained optimization turns estimates into operational decisions</span></div></div>
-          <div class="pipe-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v14M6 13l6 6 6-6"/></svg></div>
-          <div class="step"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></div><div><b>Validate</b><span>Strong baselines, k-fold cross-validation, significance tests — before results are trusted</span></div></div>
+          <div class="step"><div class="icol"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 010 8.4M7.8 16.2a6 6 0 010-8.4M19 5a10 10 0 010 14M5 19A10 10 0 015 5"/></svg></div><div class="pipe-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v14M6 13l6 6 6-6"/></svg></div></div><div><b>Sense</b><span>Noisy, real-world sensor and detector data</span></div></div>
+          <div class="step"><div class="icol"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div><div class="pipe-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v14M6 13l6 6 6-6"/></svg></div></div><div><b>Estimate</b><span>Deep-learning + neuro-fuzzy models turn signals into reliable estimates</span></div></div>
+          <div class="step"><div class="icol"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div><div class="pipe-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v14M6 13l6 6 6-6"/></svg></div></div><div><b>Decide</b><span>Constrained optimization turns estimates into operational decisions</span></div></div>
+          <div class="step"><div class="icol"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></div></div><div><b>Validate</b><span>Strong baselines, k-fold cross-validation, significance tests — before results are trusted</span></div></div>
         </div>
       </div>
     </div>
