@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760" role="img" aria-label="Schematic of taxi origin-destination flows across an urban road network, fed by a relational database">
+  <rect width="1400" height="760" fill="#ffffff"/>
+  <!-- road grid -->
+  <g stroke="#e6e8f2" stroke-width="26" stroke-linecap="round">
+    <line x1="120" y1="150" x2="1280" y2="150"/>
+    <line x1="120" y1="380" x2="1280" y2="380"/>
+    <line x1="120" y1="610" x2="1280" y2="610"/>
+    <line x1="260" y1="70" x2="260" y2="690"/>
+    <line x1="560" y1="70" x2="560" y2="690"/>
+    <line x1="860" y1="70" x2="860" y2="690"/>
+    <line x1="1160" y1="70" x2="1160" y2="690"/>
+  </g>
+  <!-- OD desire lines (width = flow volume) -->
+  <g fill="none" stroke="#5b5bf0" stroke-linecap="round" opacity="0.85">
+    <path d="M260 380 Q560 90 860 150" stroke-width="16" opacity="0.55"/>
+    <path d="M260 380 Q710 240 1160 380" stroke-width="10" opacity="0.45"/>
+    <path d="M560 610 Q710 420 860 150" stroke-width="7" opacity="0.40"/>
+    <path d="M260 150 Q560 330 860 610" stroke-width="5" opacity="0.35"/>
+    <path d="M560 610 Q860 700 1160 610" stroke-width="9" opacity="0.45"/>
+    <path d="M860 150 Q1010 240 1160 380" stroke-width="6" opacity="0.40"/>
+  </g>
+  <!-- zone nodes -->
+  <g>
+    <circle cx="260" cy="380" r="26" fill="#5b5bf0"/>
+    <circle cx="860" cy="150" r="22" fill="#0e97b8"/>
+    <circle cx="1160" cy="380" r="18" fill="#0e97b8"/>
+    <circle cx="560" cy="610" r="20" fill="#5b5bf0" opacity="0.85"/>
+    <circle cx="860" cy="610" r="14" fill="#0e97b8" opacity="0.9"/>
+    <circle cx="260" cy="150" r="14" fill="#0e97b8" opacity="0.9"/>
+    <circle cx="1160" cy="610" r="14" fill="#5b5bf0" opacity="0.7"/>
+  </g>
+  <!-- taxis -->
+  <g fill="#f5c542" stroke="#d9a520" stroke-width="2">
+    <rect x="470" y="365" width="40" height="22" rx="6"/>
+    <rect x="920" y="595" width="40" height="22" rx="6"/>
+    <rect x="700" y="135" width="40" height="22" rx="6"/>
+  </g>
+  <!-- database feeding the map -->
+  <g transform="translate(90,560)">
+    <path d="M0 26 v96 a60 26 0 0 0 120 0 v-96" fill="#eef1fb" stroke="#5b5bf0" stroke-width="5"/>
+    <ellipse cx="60" cy="26" rx="60" ry="26" fill="#eef1fb" stroke="#5b5bf0" stroke-width="5"/>
+    <ellipse cx="60" cy="66" rx="60" ry="26" fill="none" stroke="#5b5bf0" stroke-width="4" opacity="0.5"/>
+    <ellipse cx="60" cy="106" rx="60" ry="26" fill="none" stroke="#5b5bf0" stroke-width="4" opacity="0.5"/>
+  </g>
+  <g stroke="#8790a4" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M225 610 Q240 560 250 470" stroke-dasharray="2 14"/>
+  </g>
+</svg>
