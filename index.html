@@ -307,6 +307,23 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
         <div class="fig cover"><a href="assets/research/simulation.jpg" target="_blank" rel="noopener" aria-label="View full-size simulation screenshot"><img src="assets/research/simulation.jpg" alt="SUMO microscopic simulation of the signalized study intersection with four-phase signal timing" width="1400" height="1152" loading="lazy" /></a></div>
       </div>
     </div>
+    <div class="grid-label reveal">Research in Progress · Ph.D., McMaster University</div>
+    <div class="grid g2">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.8 7.2l3.3 3.2M6.8 16.8l3.3-3.2M17.2 7.2l-3.3 3.2M17.2 16.8l-3.3-3.2"/></svg></div>
+        <h3>Network-Scale Signal Control under Oversaturation</h3>
+        <p>Extending queue-aware signal optimization from a single corridor to a congested urban network. A fixed plan tuned to be optimal on one corridor can degrade the whole network when it is deployed everywhere. This work names that gap <b>the price of local optimality</b>. The remedy recasts the queue-aware objective as an adaptive control law that re-decides every few seconds, with an optional perimeter gate that solves a capacity-constrained admission linear program to meter inflow at the network boundary. Evaluated at network scale in microsimulation against strong adaptive baselines.</p>
+        <p class="review-note">First-author manuscript in preparation</p>
+        <span class="chip">Adaptive signal control</span><span class="chip">Perimeter gating</span><span class="chip">Network optimization</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+        <h3>Network-Scale Conflict-Risk Prediction</h3>
+        <p>Predicting where rear-end conflict risk will concentrate across a signalized network, one cycle ahead, from the sparse stopline detectors intersections already have. Congestion blinds those detectors exactly where risk builds. A <b>spatiotemporal graph neural network</b> therefore treats every road cell, observed or not, as a node in a typed directed graph and infers risk in the blind spots. The risk fields are built and validated entirely in SUMO microsimulation, against simulated collisions never used in training. The work extends my queue-estimation and queuing-status studies from traffic state to safety.</p>
+        <p class="review-note">First-author manuscript in preparation</p>
+        <span class="chip">Graph neural networks</span><span class="chip">Surrogate safety</span><span class="chip">Proactive risk screening</span>
+      </div>
+    </div>
     <div class="grid-label reveal">Earlier Work · M.Phil., Hohai University (2019–2022)</div>
     <div class="grid g3">
       <div class="card reveal">
