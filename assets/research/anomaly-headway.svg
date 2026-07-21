@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1080" width="1400" height="1080" role="img" aria-label="Schematic of headway anomaly detection: on a road, freely flowing cars keep even spacing while a queue packs up at a red signal, leaving one unusually large gap; below, the stopline detector's event stream shows the same crossings as ticks with that anomalous gap flagged">
+  <rect width="1400" height="1080" fill="#ffffff"/>
+
+  <!-- ============ Panel 1: the physical lane ============ -->
+  <!-- signal head above the stopline -->
+  <rect x="1288" y="200" width="10" height="70" fill="#14172b"/>
+  <rect x="1264" y="76" width="58" height="132" rx="16" fill="#14172b"/>
+  <circle cx="1293" cy="110" r="15" fill="#e0522d"/>
+  <circle cx="1293" cy="142" r="15" fill="#3d4258"/>
+  <circle cx="1293" cy="174" r="15" fill="#3d4258"/>
+
+  <!-- road band -->
+  <rect x="50" y="270" width="1300" height="160" rx="18" fill="#e6e8f2"/>
+  <!-- stopline and detector -->
+  <rect x="1258" y="270" width="9" height="160" fill="#3d4258" opacity="0.5"/>
+  <rect x="1206" y="282" width="30" height="136" rx="7" fill="#0e97b8"/>
+
+  <!-- anomalous empty stretch, flagged -->
+  <rect x="584" y="260" width="246" height="180" rx="16" fill="#e0522d" opacity="0.10"/>
+  <rect x="584" y="260" width="246" height="180" rx="16" fill="none" stroke="#e0522d" stroke-width="4" stroke-dasharray="10 10" opacity="0.75"/>
+
+  <!-- free-flowing vehicles, even generous spacing -->
+  <g fill="#f5c542" stroke="#d9a520" stroke-width="3">
+    <rect x="80" y="328" width="80" height="44" rx="12"/>
+    <rect x="280" y="328" width="80" height="44" rx="12"/>
+    <rect x="480" y="328" width="80" height="44" rx="12"/>
+  </g>
+  <!-- queued vehicles, tightly packed at the light -->
+  <g fill="#9aa3c0" stroke="#7a84a8" stroke-width="3">
+    <rect x="834" y="328" width="80" height="44" rx="12"/>
+    <rect x="928" y="328" width="80" height="44" rx="12"/>
+    <rect x="1022" y="328" width="80" height="44" rx="12"/>
+    <rect x="1116" y="328" width="80" height="44" rx="12"/>
+  </g>
+
+  <!-- ============ link from the flagged stretch to the flagged gap ============ -->
+  <g stroke="#8790a4" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M707 452 v226" stroke-dasharray="2 16"/>
+  </g>
+  <!-- alert blip anchored on the flagged stream gap -->
+  <circle cx="707" cy="722" r="28" fill="none" stroke="#e0522d" stroke-width="5"/>
+  <circle cx="707" cy="722" r="9" fill="#e0522d"/>
+
+  <!-- ============ Panel 2: the detector's event stream ============ -->
+  <!-- flagged anomalous gap in the stream -->
+  <rect x="548" y="768" width="304" height="112" rx="14" fill="#e0522d" opacity="0.10"/>
+  <rect x="548" y="768" width="304" height="112" rx="14" fill="none" stroke="#e0522d" stroke-width="4" stroke-dasharray="10 10" opacity="0.75"/>
+
+  <!-- baseline -->
+  <rect x="50" y="864" width="1300" height="9" rx="4.5" fill="#e6e8f2"/>
+  <!-- one tick per vehicle crossing, spacing mirrors the lane above -->
+  <g fill="#5b5bf0">
+    <rect x="113" y="780" width="14" height="76" rx="7"/>
+    <rect x="313" y="780" width="14" height="76" rx="7"/>
+    <rect x="513" y="780" width="14" height="76" rx="7"/>
+    <rect x="867" y="780" width="14" height="76" rx="7"/>
+    <rect x="961" y="780" width="14" height="76" rx="7"/>
+    <rect x="1055" y="780" width="14" height="76" rx="7"/>
+    <rect x="1149" y="780" width="14" height="76" rx="7"/>
+  </g>
+  <!-- the detector, source of the stream -->
+  <rect x="1206" y="830" width="30" height="66" rx="7" fill="#0e97b8"/>
+</svg>
